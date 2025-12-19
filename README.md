@@ -4,7 +4,16 @@ Generates [Playdate font
 files](https://sdk.play.date/3.0.1/Inside%20Playdate.html#C-graphics.font) from
 a local font file and a size.
 
-Example:
+
+## Dependencies
+
+* Rust: https://rust-lang.org/tools/install/
+* SDL3: https://github.com/libsdl-org/SDL/releases
+
+
+## Usage example
+
+Run this at the root of the project:
 
 ```
 $ cargo run /usr/share/fonts/noto/NotoSans-Regular.ttf 20
