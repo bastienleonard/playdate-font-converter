@@ -1,3 +1,5 @@
+use sdl3_sys::rect::SDL_Rect;
+
 #[derive(Debug)]
 pub struct Font {
     font: *mut sdl3_ttf_sys::ttf::TTF_Font
@@ -79,9 +81,9 @@ impl Surface {
 
     pub fn blit(
         &self,
-        src_rect: Option<sdl3_sys::rect::SDL_Rect>,
+        src_rect: Option<SDL_Rect>,
         dest: &mut Surface,
-        dest_rect: Option<sdl3_sys::rect::SDL_Rect>
+        dest_rect: Option<SDL_Rect>
     ) -> Result<(), String> {
         unsafe {
             let src_rect = match src_rect {

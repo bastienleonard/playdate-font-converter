@@ -3,6 +3,9 @@ mod ttf;
 use std::path::Path;
 use std::str::FromStr;
 
+use sdl3_sys::pixels::SDL_Color;
+use sdl3_sys::rect::SDL_Rect;
+
 const SPACE_WIDTH: i32 = 6;
 
 struct Args {
@@ -23,7 +26,7 @@ fn main() -> Result<(), String> {
         let font = ttf::open_font(&args.font_path, args.font_size)?;
 
         let chars_range = ('!' as u32)..=('~' as u32);
-        let color = sdl3_sys::pixels::SDL_Color {
+        let color = SDL_Color {
             r: 0,
             g: 0,
             b: 0,
@@ -92,7 +95,7 @@ fn generate_image(
     for (i, c) in chars.iter().enumerate() {
         c.surface.blit(
             Some(
-                sdl3_sys::rect::SDL_Rect {
+                SDL_Rect {
                     x: 0,
                     y: 0,
                     w: max_width,
@@ -101,7 +104,7 @@ fn generate_image(
             ),
             &mut image,
             Some(
-                sdl3_sys::rect::SDL_Rect {
+                SDL_Rect {
                     x: (i as i32 + 1) * max_width,
                     y: 0,
                     w: max_width,
