@@ -122,8 +122,6 @@ fn generate_image(
         max_height
     );
 
-    println!("{:?}", image_path);
-
     if std::fs::exists(&image_path).unwrap() {
         eprintln!("Skipped {}: already exists", image_path);
     } else {
