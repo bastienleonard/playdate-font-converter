@@ -17,7 +17,7 @@ impl Font {
         }
     }
 
-    pub fn render_shaded(
+    pub fn render_solid(
         &self,
         ch: u32,
         fg: sdl3_sys::pixels::SDL_Color

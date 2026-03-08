@@ -34,7 +34,7 @@ fn main() -> Result<(), String> {
         };
         let chars: Vec<RenderedChar> = chars_range.map(|i| {
             let c = char::from_u32(i).unwrap();
-            let surface = font.render_shaded(i, color)?;
+            let surface = font.render_solid(i, color)?;
             Ok(RenderedChar { c, surface })
         }).collect::<Result<Vec<_>, String>>()?;
         let font_stem = Path::new(&args.font_path)
